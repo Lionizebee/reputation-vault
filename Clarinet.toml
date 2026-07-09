@@ -1,0 +1,41 @@
+[project]
+name = "reputation-vault"
+description = "Reputation-weighted contributor treasury vault — programmable payroll, treasury automation, and milestone-gated payouts for DAOs, built for the FlowVault programmable money bounty on Stacks."
+authors = []
+telemetry = false
+cache_dir = "./.cache"
+
+[contracts.vault-core]
+path = "contracts/vault-core.clar"
+clarity_version = 2
+epoch = "2.5"
+
+[contracts.reputation]
+path = "contracts/reputation.clar"
+clarity_version = 2
+epoch = "2.5"
+
+[contracts.emergency-fund]
+path = "contracts/emergency-fund.clar"
+clarity_version = 2
+epoch = "2.5"
+
+[contracts.milestone-gate]
+path = "contracts/milestone-gate.clar"
+clarity_version = 2
+epoch = "2.5"
+
+[contracts.payout-router]
+path = "contracts/payout-router.clar"
+clarity_version = 2
+epoch = "2.5"
+depends_on = ["vault-core", "reputation", "milestone-gate"]
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false

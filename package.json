@@ -1,0 +1,18 @@
+{
+  "name": "reputation-vault",
+  "version": "1.0.0",
+  "description": "Reputation-weighted contributor treasury vault on Stacks -- FlowVault programmable money bounty submission",
+  "private": true,
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:report": "vitest run -- --coverage --costs"
+  },
+  "devDependencies": {
+    "@hirosystems/clarinet-sdk": "^2.11.0",
+    "@stacks/transactions": "^6.15.0",
+    "vitest": "^2.0.5",
+    "vitest-environment-clarinet": "^2.1.0",
+    "typescript": "^5.5.4"
+  }
+}
